@@ -14,24 +14,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Set CNAME and homepage
         run: |
           BRANCH="${GITHUB_REF##*/}"
           if [ "$BRANCH" = "main" ]; then
             echo "www.askhanhassan.com" > public/CNAME
-            npm pkg set homepage=https://www.askhanhassan.com
+            npm pkg set homepage="https://www.askhanhassan.com"
             echo "DEPLOY_BRANCH=gh-pages-prod" >> $GITHUB_ENV
           elif [ "$BRANCH" = "dev" ]; then
             echo "dev.askhanhassan.com" > public/CNAME
-            npm pkg set homepage=https://dev.askhanhassan.com
+            npm pkg set homepage="https://dev.askhanhassan.com"
             echo "DEPLOY_BRANCH=gh-pages-dev" >> $GITHUB_ENV
           fi
 
