@@ -24,7 +24,7 @@ jobs:
       - name: Set homepage and CNAME
         run: |
           echo "www.askhanhassan.com" > public/CNAME
-          npm pkg set homepage="https://www.askhanhassan.com"
+          npm pkg set homepage="https://askhanhassan.github.io/portfolio"
 
       - name: Build the project
         run: npm run build
@@ -35,15 +35,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           publish_branch: gh-pages
-
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Move CNAME after build
-        run: echo "www.askhanhassan.com" > build/CNAME
-
