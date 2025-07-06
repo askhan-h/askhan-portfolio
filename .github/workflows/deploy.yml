@@ -1,4 +1,4 @@
-name: Deploy React App to GitHub Pages
+name: Auto Deploy React to GitHub Pages
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
       - dev
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,15 +22,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Set dynamic homepage and CNAME
+      - name: Set CNAME and homepage
         run: |
-          BRANCH=${GITHUB_REF##*/}
+          BRANCH="${GITHUB_REF##*/}"
           if [ "$BRANCH" = "main" ]; then
             echo "www.askhanhassan.com" > public/CNAME
             npm pkg set homepage=https://www.askhanhassan.com
-          else
+            echo "DEPLOY_BRANCH=gh-pages-prod" >> $GITHUB_ENV
+          elif [ "$BRANCH" = "dev" ]; then
             echo "dev.askhanhassan.com" > public/CNAME
             npm pkg set homepage=https://dev.askhanhassan.com
+            echo "DEPLOY_BRANCH=gh-pages-dev" >> $GITHUB_ENV
           fi
 
       - name: Build project
@@ -41,4 +43,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          publish_branch: ${{ github.ref_name }}
+          publish_branch: ${{ env.DEPLOY_BRANCH }}
