@@ -1,10 +1,9 @@
-name: Auto Deploy React to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main
-      - dev
 
 jobs:
   deploy:
@@ -22,25 +21,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Set CNAME and homepage
+      - name: Set homepage and CNAME
         run: |
-          BRANCH="${GITHUB_REF##*/}"
-          if [ "$BRANCH" = "main" ]; then
-            echo "www.askhanhassan.com" > public/CNAME
-            npm pkg set homepage="https://www.askhanhassan.com"
-            echo "DEPLOY_BRANCH=gh-pages-prod" >> $GITHUB_ENV
-          elif [ "$BRANCH" = "dev" ]; then
-            echo "dev.askhanhassan.com" > public/CNAME
-            npm pkg set homepage="https://dev.askhanhassan.com"
-            echo "DEPLOY_BRANCH=gh-pages-dev" >> $GITHUB_ENV
-          fi
+          echo "www.askhanhassan.com" > public/CNAME
+          npm pkg set homepage="https://www.askhanhassan.com"
 
-      - name: Build project
+      - name: Build the project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          publish_branch: ${{ env.DEPLOY_BRANCH }}
+          publish_branch: gh-pages
