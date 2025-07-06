@@ -24,7 +24,7 @@ jobs:
       - name: Set homepage and CNAME
         run: |
           echo "www.askhanhassan.com" > public/CNAME
-          npm pkg set homepage="https://askhanhassan.github.io/portfolio"
+          npm pkg set homepage="https://www.askhanhassan.com"
 
       - name: Build the project
         run: npm run build
