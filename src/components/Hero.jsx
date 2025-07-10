@@ -18,39 +18,38 @@ const Hero = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
-    };
-
+    }
   };
 
-const handleEmailClick = (e) => {
-  e.preventDefault();
-  
-  const subject = "Let's connect regarding opportunities";
-  const body = "Hello Askhan,\n\nI came across your profile and wanted to get in touch about...";
-  const mailtoLink = `mailto:askhan.hassan@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
-  // Create a temporary anchor element and click it
-  const mailLink = document.createElement('a');
-  mailLink.href = mailtoLink;
-  mailLink.style.display = 'none';
-  document.body.appendChild(mailLink);
-  mailLink.click();
-  document.body.removeChild(mailLink);
-  
-  // Fallback after 1 second if mail client didn't open
-  setTimeout(() => {
-    navigator.clipboard.writeText('askhan.hassan@gmail.com').then(() => {
-      alert('Email address copied to clipboard: askhan.hassan@gmail.com');
-    });
-  }, 1000);
-};
+  const handleEmailClick = (e) => {
+    e.preventDefault();
+
+    const email = 'askhan.hassan@gmail.com';
+    const subject = "Let's Connect";
+    const body = "Hello Askhan,\n\nI came across your profile and wanted to get in touch about...";
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Open mail client
+    window.location.href = mailtoLink;
+
+    // Attempt to copy email to clipboard if the document is focused
+    if (document.hasFocus()) {
+      navigator.clipboard.writeText(email).then(() => {
+        console.log('Email copied to clipboard');
+      }).catch((err) => {
+        console.warn('Clipboard copy failed:', err);
+      });
+    } else {
+      console.warn('Clipboard copy skipped: document not focused');
+    }
+  };
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-x-hidden">
       <div className="absolute inset-0 -z-10 w-screen" />
-
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-2 lg:px-4 pt-8 md:pt-12 pb-4 md:pb-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16">
+
           {/* Text content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -69,14 +68,14 @@ const handleEmailClick = (e) => {
                 Askhan Hassan
               </span>
             </motion.h1>
-            
+
             <motion.h2
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-8 text-gray-600"
+              className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 text-gray-600"
             >
-              Senior Software Quality Engineer
+              Software Quality Assurance Lead
             </motion.h2>
 
             {/* Action buttons */}
@@ -84,7 +83,7 @@ const handleEmailClick = (e) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8"
+              className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-4"
             >
               <motion.button
                 whileHover={{ y: -2 }}
@@ -94,7 +93,7 @@ const handleEmailClick = (e) => {
               >
                 Contact Me
               </motion.button>
-              
+
               <motion.button
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
@@ -105,57 +104,75 @@ const handleEmailClick = (e) => {
               </motion.button>
             </motion.div>
 
-            {/* Social links */}
+            {/* Social links with tooltips */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
               className="flex justify-center lg:justify-start gap-4"
             >
-              <a
-                href="https://github.com/askhan-h"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-4 bg-white text-gray-700 rounded-full shadow-md group-hover:bg-gray-800 group-hover:text-white transition-all duration-300 w-16 h-16 flex items-center justify-center"
+              {/* GitHub */}
+              <div className="relative group">
+                <a
+                  href="https://github.com/askhan-h"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
                 >
-                  <FaGithub className="text-2xl" />
-                </motion.div>
-              </a>
-              
-              <a
-                href="https://linkedin.com/in/askhanhassan"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group"
-              >
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-4 bg-white text-gray-700 rounded-full shadow-md group-hover:bg-blue-700 group-hover:text-white transition-all duration-300 w-16 h-16 flex items-center justify-center"
+                  <motion.div
+                    whileHover={{ y: -5, scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-4 bg-white text-gray-700 rounded-full shadow-md group-hover:bg-gray-800 group-hover:text-white transition-all duration-300 w-16 h-16 flex items-center justify-center"
+                  >
+                    <FaGithub className="text-2xl" />
+                  </motion.div>
+                </a>
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none">
+                  GitHub
+                </span>
+              </div>
+
+              {/* LinkedIn */}
+              <div className="relative group">
+                <a
+                  href="https://linkedin.com/in/askhanhassan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
                 >
-                  <FaLinkedin className="text-2xl" />
-                </motion.div>
-              </a>
-              
-              <a
-                href="mailto:askhan.hassan@gmail.com"
-                onClick={handleEmailClick}
-                className="group"
-                aria-label="Email Askhan Hassan"
-              >
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="p-4 bg-white text-gray-700 rounded-full shadow-md group-hover:bg-red-500 group-hover:text-white transition-all duration-300 w-16 h-16 flex items-center justify-center"
+                  <motion.div
+                    whileHover={{ y: -5, scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-4 bg-white text-gray-700 rounded-full shadow-md group-hover:bg-blue-700 group-hover:text-white transition-all duration-300 w-16 h-16 flex items-center justify-center"
+                  >
+                    <FaLinkedin className="text-2xl" />
+                  </motion.div>
+                </a>
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none">
+                  LinkedIn
+                </span>
+              </div>
+
+              {/* Email */}
+              <div className="relative group">
+                <a
+                  href="mailto:askhan.hassan@gmail.com"
+                  onClick={handleEmailClick}
+                  className="group"
+                  aria-label="Email Askhan Hassan"
                 >
-                  <HiMail className="text-2xl" />
-                </motion.div>
-              </a>
+                  <motion.div
+                    whileHover={{ y: -5, scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-4 bg-white text-gray-700 rounded-full shadow-md group-hover:bg-red-500 group-hover:text-white transition-all duration-300 w-16 h-16 flex items-center justify-center"
+                  >
+                    <HiMail className="text-2xl" />
+                  </motion.div>
+                </a>
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none">
+                  Email
+                </span>
+              </div>
             </motion.div>
           </motion.div>
 
@@ -167,27 +184,27 @@ const handleEmailClick = (e) => {
             className="w-full lg:w-1/2 flex justify-center relative"
           >
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
-              <motion.div 
+              <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0 border-4 border-blue-200 rounded-full opacity-30"
               />
-              
+
               <div className="relative z-10 w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl">
-                <img 
+                <img
                   src={profile}
-                  alt="Askhan Hassan" 
+                  alt="Askhan Hassan"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-4 -left-4 w-16 h-16 bg-blue-100 rounded-full opacity-30 z-0"
               />
-              <motion.div 
+              <motion.div
                 animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
                 transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-4 -right-4 w-20 h-20 bg-blue-200 rounded-full opacity-30 z-0"

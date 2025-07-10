@@ -69,14 +69,14 @@ const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-12 sm:py-16 lg:py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-1 sm:py-2 lg:py-4">
+      <div className="container mx-auto px-1 sm:px-2 lg:px-4">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           viewport={{ once: true }}
-          className="text-2xl sm:text-3xl font-bold mb-12 sm:mb-16 text-center"
+          className="text-2xl sm:text-3xl font-bold mb-8 sm:mb-16 text-center"
         >
           <span className="relative inline-block pb-2">
             <span className="relative z-10">Work Experience</span>

@@ -4,54 +4,58 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Handle scroll to show/hide navbar
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
-      setPrevScrollPos(currentScrollPos);
+      if (window.scrollY < lastScrollY) {
+        setShowNavbar(true); // scrolling up
+      } else {
+        setShowNavbar(false); // scrolling down
+      }
+      setLastScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos]);
-
-  // Close mobile menu when clicking a link
-  const handleNavClick = () => {
-    if (isOpen) setIsOpen(false);
-  };
+  }, [lastScrollY]);
 
   return (
-    <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ 
-        y: visible ? 0 : -100,
-        transition: { duration: 0.3 }
-      }}
-      className={`fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm transition-transform duration-300 ${
-        visible ? 'translate-y-0' : '-translate-y-full'
-      }`}
+    <motion.nav
+      initial={{ y: 0 }}
+      animate={{ y: showNavbar ? 0 : -100 }}
+      transition={{ duration: 0.3 }}
+      className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm"
     >
       <div className="container mx-auto px-4 py-3 sm:py-4">
         <div className="flex justify-between items-center">
-          <p className="text-xl sm:text-2xl font-bold text-primary">
-            Askhan Hassan
-          </p>
-          
-          {/* Desktop Navigation */}
+          {/* Logo/Name */}
+          <p className="text-xl sm:text-2xl font-bold text-primary">Askhan Hassan</p>
+
+          {/* Desktop navigation */}
           <div className="hidden md:flex space-x-6">
-            <a href="#about" className="hover:text-primary transition-colors font-semibold">About</a>
-            <a href="#experience" className="hover:text-primary transition-colors font-semibold">Experience</a>
-            <a href="#skills" className="hover:text-primary transition-colors font-semibold">Skills</a>
-            <a href="#services" className="hover:text-primary transition-colors font-semibold">Services</a>
-            <a href="#contact" className="hover:text-primary transition-colors font-semibold">Contact</a>
+            {['about', 'experience', 'skills', 'services', 'contact'].map((section) => (
+              <button
+                key={section}
+                onClick={() => scrollToSection(section)}
+                className="hover:text-primary transition-colors font-semibold"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+            ))}
           </div>
 
-          {/* Mobile menu button */}
-          <button 
+          {/* Mobile menu toggle */}
+          <button
             className="md:hidden text-gray-700 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
@@ -60,44 +64,18 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile navigation */}
         <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} pb-4`}>
           <div className="flex flex-col space-y-3 mt-3">
-            <a 
-              href="#about" 
-              className="hover:text-primary transition-colors font-semibold"
-              onClick={handleNavClick}
-            >
-              About
-            </a>
-            <a 
-              href="#experience" 
-              className="hover:text-primary transition-colors font-semibold"
-              onClick={handleNavClick}
-            >
-              Experience
-            </a>
-            <a 
-              href="#skills" 
-              className="hover:text-primary transition-colors font-semibold"
-              onClick={handleNavClick}
-            >
-              Skills
-            </a>
-            <a 
-              href="#services" 
-              className="hover:text-primary transition-colors font-semibold"
-              onClick={handleNavClick}
-            >
-              Services
-            </a>
-            <a 
-              href="#contact" 
-              className="hover:text-primary transition-colors font-semibold"
-              onClick={handleNavClick}
-            >
-              Contact
-            </a>
+            {['about', 'experience', 'skills', 'services', 'contact'].map((section) => (
+              <button
+                key={section}
+                onClick={() => scrollToSection(section)}
+                className="hover:text-primary transition-colors font-semibold text-left"
+              >
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </button>
+            ))}
           </div>
         </div>
       </div>

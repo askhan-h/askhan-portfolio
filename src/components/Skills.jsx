@@ -23,13 +23,17 @@ import python from '../assets/images/python.jpg';
 import selenium from '../assets/images/selenium-2.webp';
 import playwright from '../assets/images/playwright.png';
 import jira from '../assets/images/jira.jpg';
+import monday from '../assets/images/monday.svg';
+import azureDevOps from '../assets/images/azureDevOps.png';
+import qmetry from '../assets/images/qmetry.png';
+import gitlab from '../assets/images/gitlab.png';
 const Skills = () => {
   // Categorize skills with icon components
   const skillCategories = [
     {
       title: "Test Automation",
       icon: <FaRobot className="text-blue-900 text-3xl" />,
-      skills: ['Appium', 'Selenium', 'Playwright', 'Cypress']
+      skills: ['Appium', 'Selenium', 'Playwright', 'Postman']
     },
     {
       title: "Development",
@@ -39,12 +43,12 @@ const Skills = () => {
     {
       title: "DevOps",
       icon: <FaSyncAlt className="text-blue-900 text-3xl" />,
-      skills: ['GitHub', 'GitHub Actions', 'Jenkins', 'AWS']
+      skills: ['Git Lab CI/CD', 'GitHub Actions', 'Jenkins', 'AWS']
     },
     {
-      title: "Testing",
+      title: "Test Management",
       icon: <FaSearch className="text-blue-900 text-3xl" />,
-      skills: ['Jira', 'Postman']
+      skills: ['Jira', 'Monday.com', 'Azure DevOps', 'QMetry']
     }
   ];
 
@@ -63,6 +67,10 @@ const Skills = () => {
   'JavaScript': <img src={javascript} alt="JavaScript" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
   'Python': <img src={python} alt="Python" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
   'Jira': <img src={jira} alt="Jira" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
+  'Monday.com': <img src={monday} alt="Monday.com" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
+  'Azure DevOps': <img src={azureDevOps} alt="Azure DevOps" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
+  'QMetry': <img src={qmetry} alt="QMetry" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
+  'Git Lab CI/CD': <img src={gitlab} alt="Git Lab CI/CD" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
 };
 
   // Animation variants
@@ -95,7 +103,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-8 bg-white">
+    <section id="skills" className="py-4">
       <div className="container mx-auto px-4">
         {/* Animated Header */}
         <motion.h2 
@@ -107,7 +115,7 @@ const Skills = () => {
             damping: 15
           }}
           viewport={{ once: true, margin: "-50px" }}
-          className="text-3xl font-bold mb-16 text-center"
+          className="text-3xl font-bold mb-12 text-center"
         >
           <motion.span 
             className="relative inline-block pb-2"

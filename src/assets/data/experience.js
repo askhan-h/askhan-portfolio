@@ -20,6 +20,7 @@ export const experiences = [{
   duration: "Jan 2024 - May 2025",
     description: [
       "Managed and trained Junior QA Engineers, ensuring their professional growth and enhancing team productivity.",
+      "Implemented the Shift Left Testing approach by collaborating with developers and product owners early in the lifecycle to identify potential defects in design and requirements.",
       "Created a robust, core omni test automation framework leveraging Appium, Playwright, and RestAssured and distributed using GitHub Actions platform.",
       "Developed a deep understanding of industry-specific regulations, including GDPR and PDPA, to ensure compliance.",
       "Led the QA team with a focus on quality-driven standards, fostering a culture of excellence and continuous improvement.",
