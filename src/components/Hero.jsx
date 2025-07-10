@@ -45,7 +45,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-x-hidden">
+    <section id="hero" className="relative w-full min-h-screen flex items-center justify-center overflow-x-hidden">
       <div className="absolute inset-0 -z-10 w-screen" />
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-2 lg:px-4 pt-8 md:pt-12 pb-4 md:pb-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16">

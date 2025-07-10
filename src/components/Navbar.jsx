@@ -17,17 +17,21 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY < lastScrollY) {
-        setShowNavbar(true); // scrolling up
+      const currentY = window.scrollY;
+
+      if (currentY === 0 || currentY < lastScrollY) {
+        setShowNavbar(true); // scrolling up or at top
       } else {
         setShowNavbar(false); // scrolling down
       }
-      setLastScrollY(window.scrollY);
+
+      setLastScrollY(currentY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
+
 
   return (
     <motion.nav
