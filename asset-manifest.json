@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fd94324d.css",
-    "main.js": "/static/js/main.ba5f4e3a.js",
+    "main.css": "/static/css/main.60d08e4f.css",
+    "main.js": "/static/js/main.e3c90577.js",
     "static/media/profile.jpg": "/static/media/profile.131d378066d945f6195f.jpg",
     "static/media/Askhan_Hassan_CV.pdf": "/static/media/Askhan_Hassan_CV.59d887853179506e47ea.pdf",
     "static/media/inter-latin-ext-600-normal.woff": "/static/media/inter-latin-ext-600-normal.4d0d5017d71ea1750fc1.woff",
@@ -66,11 +66,11 @@
     "static/media/inter-vietnamese-400-normal.woff2": "/static/media/inter-vietnamese-400-normal.44c9df135eec470b0ab6.woff2",
     "index.html": "/index.html",
     "static/media/monday.svg": "/static/media/monday.42c9b37bab1afe5fff620d1efbbfbca2.svg",
-    "main.fd94324d.css.map": "/static/css/main.fd94324d.css.map",
-    "main.ba5f4e3a.js.map": "/static/js/main.ba5f4e3a.js.map"
+    "main.60d08e4f.css.map": "/static/css/main.60d08e4f.css.map",
+    "main.e3c90577.js.map": "/static/js/main.e3c90577.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd94324d.css",
-    "static/js/main.ba5f4e3a.js"
+    "static/css/main.60d08e4f.css",
+    "static/js/main.e3c90577.js"
   ]
 }
