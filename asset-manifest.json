@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.e8ef0182.css",
-    "main.js": "/static/js/main.6531dda5.js",
+    "main.css": "/static/css/main.fd94324d.css",
+    "main.js": "/static/js/main.ba5f4e3a.js",
     "static/media/profile.jpg": "/static/media/profile.131d378066d945f6195f.jpg",
-    "static/media/Askhan_Hassan_CV.pdf": "/static/media/Askhan_Hassan_CV.48fe4b688270e77512cd.pdf",
+    "static/media/Askhan_Hassan_CV.pdf": "/static/media/Askhan_Hassan_CV.59d887853179506e47ea.pdf",
     "static/media/inter-latin-ext-600-normal.woff": "/static/media/inter-latin-ext-600-normal.4d0d5017d71ea1750fc1.woff",
     "static/media/inter-latin-ext-700-normal.woff": "/static/media/inter-latin-ext-700-normal.454735e8a8af2928485e.woff",
     "static/media/inter-latin-ext-500-normal.woff": "/static/media/inter-latin-ext-500-normal.2f93aaa35e870cec4704.woff",
@@ -23,6 +23,7 @@
     "static/media/inter-latin-400-normal.woff2": "/static/media/inter-latin-400-normal.eca1e21531598d5db58f.woff2",
     "static/media/ga.png": "/static/media/ga.3ab75a3957d67e9d3010.png",
     "static/media/selenium-2.webp": "/static/media/selenium-2.07dcaab1034c0d89a454.webp",
+    "static/media/gitlab.png": "/static/media/gitlab.f740ea715762d5784904.png",
     "static/media/inter-cyrillic-ext-600-normal.woff": "/static/media/inter-cyrillic-ext-600-normal.2c47e01b64f03ba9fb58.woff",
     "static/media/inter-cyrillic-ext-500-normal.woff": "/static/media/inter-cyrillic-ext-500-normal.69e09a587b911ec8ad0f.woff",
     "static/media/inter-cyrillic-ext-700-normal.woff": "/static/media/inter-cyrillic-ext-700-normal.0ddea3beace60380deb1.woff",
@@ -63,12 +64,13 @@
     "static/media/inter-vietnamese-500-normal.woff2": "/static/media/inter-vietnamese-500-normal.63d02ea896a7406849b6.woff2",
     "static/media/inter-vietnamese-600-normal.woff2": "/static/media/inter-vietnamese-600-normal.6984cf5e8583fac83be3.woff2",
     "static/media/inter-vietnamese-400-normal.woff2": "/static/media/inter-vietnamese-400-normal.44c9df135eec470b0ab6.woff2",
+    "static/media/monday.svg": "/static/media/monday.42c9b37bab1afe5fff620d1efbbfbca2.svg",
     "index.html": "/index.html",
-    "main.e8ef0182.css.map": "/static/css/main.e8ef0182.css.map",
-    "main.6531dda5.js.map": "/static/js/main.6531dda5.js.map"
+    "main.fd94324d.css.map": "/static/css/main.fd94324d.css.map",
+    "main.ba5f4e3a.js.map": "/static/js/main.ba5f4e3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8ef0182.css",
-    "static/js/main.6531dda5.js"
+    "static/css/main.fd94324d.css",
+    "static/js/main.ba5f4e3a.js"
   ]
 }
