@@ -7,6 +7,7 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Services from './components/Services';
 import ContactForm from './components/ContactForm';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   return (
@@ -81,6 +82,7 @@ function App() {
             <ContactForm />
           </motion.section>
         </main>
+        <ScrollToTopButton />
       </div>
     </Router>
   );
