@@ -10,15 +10,15 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-8 md:py-12 lg:py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-2 md:py-4 lg:py-6">
+      <div className="container mx-auto px-2 sm:px-4 lg:px-6">
         {/* About Me Section */}
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           viewport={{ once: true }}
-          className="text-2xl sm:text-3xl font-bold mb-6 md:mb-10 text-center"
+          className="text-2xl sm:text-3xl font-bold mb-2 md:mb-4 text-center"
         >
           <span className="relative inline-block">
             <span className="relative z-10">About Me</span>
@@ -31,15 +31,15 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
           viewport={{ once: true }}
-          className="pb-8 prose-sm sm:prose-lg max-w-4xl mx-auto mb-12 md:mb-16 lg:mb-20"
+          className="pb-8 prose-sm sm:prose-lg max-w-4xl mx-auto mb-8 md:mb-12 lg:mb-16"
         >
           <p className="mb-4 sm:mb-6 font-medium text-base sm:text-lg text-gray-700 leading-relaxed">
-            Motivated self-driven Software QE professional dedicated to delivering high-quality enterprise-grade software applications. 
-            With 9+ years of experience in software quality engineering, I've worked across diverse domains including:
+            An ISTQB certified self-driven Software QA professional dedicated to delivering high-quality enterprise-grade software applications.
+            With <b>9+ years of experience </b> in software quality engineering, I've worked across diverse domains including:
           </p>
           
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-8 gap-y-2 mb-6 sm:mb-8 text-sm sm:text-base font-semibold">
-            {['Health Care Systems', 'FinTech Platforms', 'Testing-as-a-Service (TAAS)', 'Event Technology'].map((domain, index) => (
+            {['Health Care Systems', 'FinTech Platforms (Payments and Stock Exc)', 'Testing-as-a-Service (TAAS)', 'Event Technology'].map((domain, index) => (
               <li key={index} className="flex items-start">
                 <span className="text-primary mr-2">•</span>
                 <span className="bg-gray-100 px-2 py-1 rounded-md text-xs sm:text-sm">{domain}</span>
@@ -59,7 +59,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           viewport={{ once: true }}
-          className="text-2xl sm:text-3xl font-bold mb-8 md:mb-12 text-center"
+          className="text-2xl sm:text-3xl font-bold mb-2 md:mb-4 text-center"
         >
           <span className="relative inline-block">
             <span className="relative z-8">Education & Qualifications</span>
@@ -75,9 +75,9 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
-              className="bg-white p-6 sm:p-8 rounded-lg shadow-sm border border-gray-100"
+              className="bg-white p-4 sm:p-6 rounded-lg shadow-sm border border-gray-100"
             >
-              <div className="flex items-center mb-4 sm:mb-6">
+              <div className="flex items-center mb-2 sm:mb-4">
                 <div className="p-2 sm:p-3 bg-primary/10 rounded-full mr-3 sm:mr-4">
                   <svg className="w-5 h-5 sm:w-6 sm:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />

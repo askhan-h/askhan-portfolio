@@ -17,7 +17,7 @@ export const softSkills = [
   "Analytical and Logical Thinking",
   "Troubleshooting",
   "Communication",
-  "Problem Solving",
+  "Shift Left Testing",
   "Attention to Details",
   "Time Management"
 ];

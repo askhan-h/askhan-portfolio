@@ -12,14 +12,11 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white text-gray-800 overflow-x-hidden">
-        {/* Sticky Navbar */}
-        <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
-          <Navbar />
-        </div>
-        
-        <main className="w-full max-w-7xl mx-auto">
+       <Navbar />
+
+        <main className="w-full max-w-7xl mx-auto pt-24">
           {/* Hero Section */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -28,9 +25,9 @@ function App() {
           >
             <Hero />
           </motion.section>
-          
+
           {/* About Section */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -39,9 +36,9 @@ function App() {
           >
             <About />
           </motion.section>
-          
+
           {/* Experience Section */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -50,9 +47,9 @@ function App() {
           >
             <Experience />
           </motion.section>
-          
+
           {/* Skills Section */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -61,9 +58,9 @@ function App() {
           >
             <Skills />
           </motion.section>
-          
+
           {/* Services Section */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -72,9 +69,9 @@ function App() {
           >
             <Services />
           </motion.section>
-          
+
           {/* Contact Section */}
-          <motion.section 
+          <motion.section
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}

@@ -13,11 +13,11 @@ const ContactForm = () => {
 
   // Contact information
   const whatsappNumber = '+94717612345';
-  const whatsappMessage = 'Hello! I would like to get in touch with you.';
+  const whatsappMessage = 'Hello! I would like to inquire about';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   const emailAddress = 'askhan.hassan@gmail.com';
   const emailSubject = 'Contact Inquiry';
-  const emailBody = 'Hello, I would like to get in touch with you about...';
+  const emailBody = 'Hello! I would like to inquire about';
   const emailUrl = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
   const sendEmail = (e) => {
@@ -56,8 +56,8 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-12 md:py-16 lg:py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-2 md:py-4 lg:py-8 ">
+      <div className="container mx-auto px-2 sm:px-2 lg:px-4">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}

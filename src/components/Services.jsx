@@ -44,14 +44,14 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-12 ">
-      <div className="container mx-auto px-4">
+    <section id="services" className="py-4 ">
+      <div className="container mx-auto px-2">
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
           viewport={{ once: true }}
-          className="text-3xl font-bold mb-12 text-center"
+          className="text-3xl font-bold mb-8 text-center"
         >
           <span className="relative inline-block pb-2">
             <span className="relative z-10">Services</span>
