@@ -4,10 +4,11 @@ export const experiences = [{
   company: "Trust Payments",
   duration: "Sep 2024 - Present",
   description: [
-    "Improved test automation pass rate from 65% to 98% by identifying and fixing flaky tests, and implementing robust error-handling mechanisms",
-    "Enhanced and maintained the automated test framework built on BDD using tech stacks such as Python, Selenium, Behave and Poetry etc improving reliability and efficiency of test execution.",
-    "Investigated and resolved test failures, identifying root causes and collaborating with developers to implement fixes.",
-    "Performed manual and exploratory testing for new features, ensuring highquality releases in an Agile environment.",
+    "Improved test automation pass rate from 65% to 98% by identifying and fixing flaky tests and implementing robust error-handling mechanisms.",
+     "Enhanced and maintained the automated test framework built on BDD using Tech-stack such as Python, Selenium, Behave and Browserstack etc improving reliability and efficiency of test execution.",
+    "Applied in-depth domain knowledge of digital payments (Apple Pay, Google Pay, Card Payments) and their security protocols to guide QA strategy and ensure platform compliance with PCI-DSS and PSD2.",
+    "Monitored daily CI/CD test pipeline execution in DataDog, analysed failure trends, and created Jira tickets for resolution.",
+    "Performed manual and exploratory testing for new features, ensuring high-quality releases in an Agile environment.",
     "Collaborated closely with developers, product owners, and stakeholders to sign off on release quality before deployment to production.",
     "Defined and expanded test cases across multiple automated test suites, documenting results and tracking defects.",
     "Provided accurate test estimations and testing strategies to support sprint planning and project timelines.",
@@ -19,15 +20,16 @@ export const experiences = [{
   company: "Fcode Labs",
   duration: "Jan 2024 - May 2025",
     description: [
-      "Managed and trained Junior QA Engineers, ensuring their professional growth and enhancing team productivity.",
+      "Managed and trained more than 10 Junior QA Engineers, ensuring their professional growth and enhancing team productivity.",
       "Implemented the Shift Left Testing approach by collaborating with developers and product owners early in the lifecycle to identify potential defects in design and requirements.",
-      "Created a robust, core omni test automation framework leveraging Appium, Playwright, and RestAssured and distributed using GitHub Actions platform.",
-      "Developed a deep understanding of industry-specific regulations, including GDPR and PDPA, to ensure compliance.",
-      "Led the QA team with a focus on quality-driven standards, fostering a culture of excellence and continuous improvement.",
-      "Designed comprehensive Test Plans and Test Cases, ensuring thorough testing coverage and accurate results.",
-      "Executed test plans meticulously and provided detailed execution reports after every test cycle.",
-      "Collaborated effectively with stakeholders, offering constructive feedback on requirements to enhance implementation processes.",
-      "Oversaw Test Case and Defect management, ensuring efficient distribution and tracking of defects and test cases."
+      "Created an omni test automation framework leveraging Appium, Playwright, Rest Assured, Java and distributed using GitHub, Actions and Packages.",
+      "Reduced test execution time by 30% through the automation of the smoke test suite.",
+      "Ensured security compliance by applying industry-specific regulations, including GDPR and PDPA.",
+      "Designed comprehensive Test Plans, Test Scenarios and Test Cases ensuring thorough testing coverage and accurate results using JIRA and Mind Map tools.",
+      "Executed test plans and provided detailed execution reports after every test cycle using QMetry.",
+      "Performed backend testing on the database using SQL to validate the accuracy, and successful migration of data.",
+      "Conducted API testing using Postman and Swagger documentation to validate endpoints, request-response structure across systems.",
+      "Performed rigorous testing on massive datasets collected via mobile and stored in AWS S3 buckets, ensuring data integrity, accuracy, and proper storage functionality."
     ]
   },
   {
