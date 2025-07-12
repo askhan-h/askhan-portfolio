@@ -1,32 +1,33 @@
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
-import { HiMail } from 'react-icons/hi';
-import profile from '../assets/images/profile.jpg';
-import cvPdf from '../assets/docs/Askhan_Hassan_CV.pdf';
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaFileDownload } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
+import profile from "../assets/images/profile.jpg";
+import cvPdf from "../assets/docs/Askhan_Hassan_CV.pdf";
 
 const Hero = () => {
   const handleDownloadCV = () => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = cvPdf;
-    link.download = 'Askhan_Hassan_CV.pdf';
+    link.download = "Askhan_Hassan_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
+    const contactSection = document.getElementById("contact");
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+      contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const handleEmailClick = (e) => {
     e.preventDefault();
 
-    const email = 'askhan.hassan@gmail.com';
+    const email = "askhan.hassan@gmail.com";
     const subject = "Let's Connect";
-    const body = "Hello Askhan,\n\nI came across your profile and wanted to get in touch about...";
+    const body =
+      "Hello Askhan,\n\nI came across your profile and wanted to get in touch about...";
     const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     // Open mail client
@@ -34,22 +35,27 @@ const Hero = () => {
 
     // Attempt to copy email to clipboard if the document is focused
     if (document.hasFocus()) {
-      navigator.clipboard.writeText(email).then(() => {
-        console.log('Email copied to clipboard');
-      }).catch((err) => {
-        console.warn('Clipboard copy failed:', err);
-      });
+      navigator.clipboard
+        .writeText(email)
+        .then(() => {
+          console.log("Email copied to clipboard");
+        })
+        .catch((err) => {
+          console.warn("Clipboard copy failed:", err);
+        });
     } else {
-      console.warn('Clipboard copy skipped: document not focused');
+      console.warn("Clipboard copy skipped: document not focused");
     }
   };
 
   return (
-    <section id="hero" className="relative w-full min-h-screen flex items-center justify-center overflow-x-hidden">
+    <section
+      id="hero"
+      className="relative w-full min-h-screen flex items-center justify-center overflow-x-hidden"
+    >
       <div className="absolute inset-0 -z-10 w-screen" />
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-2 lg:px-4 pt-8 md:pt-12 pb-4 md:pb-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12 lg:gap-16">
-
           {/* Text content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -201,12 +207,20 @@ const Hero = () => {
 
               <motion.div
                 animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute -top-4 -left-4 w-16 h-16 bg-blue-100 rounded-full opacity-30 z-0"
               />
               <motion.div
                 animate={{ y: [0, 15, 0], rotate: [0, -10, 0] }}
-                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="absolute -bottom-4 -right-4 w-20 h-20 bg-blue-200 rounded-full opacity-30 z-0"
               />
             </div>

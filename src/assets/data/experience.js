@@ -1,24 +1,26 @@
-export const experiences = [{
-  id: 0,
-  role: "Associate QA Lead",
-  company: "Trust Payments",
-  duration: "Sep 2024 - Present",
-  description: [
-    "Improved test automation pass rate from 65% to 98% by identifying and fixing flaky tests and implementing robust error-handling mechanisms.",
-     "Enhanced and maintained the automated test framework built on BDD using Tech-stack such as Python, Selenium, Behave and Browserstack etc improving reliability and efficiency of test execution.",
-    "Applied in-depth domain knowledge of digital payments (Apple Pay, Google Pay, Card Payments) and their security protocols to guide QA strategy and ensure platform compliance with PCI-DSS and PSD2.",
-    "Monitored daily CI/CD test pipeline execution in DataDog, analysed failure trends, and created Jira tickets for resolution.",
-    "Performed manual and exploratory testing for new features, ensuring high-quality releases in an Agile environment.",
-    "Collaborated closely with developers, product owners, and stakeholders to sign off on release quality before deployment to production.",
-    "Defined and expanded test cases across multiple automated test suites, documenting results and tracking defects.",
-    "Provided accurate test estimations and testing strategies to support sprint planning and project timelines.",
-    "Participated in retrospectives and workshops, driving process improvements and best practices in QA."
-  ]
-}, {
-  id: 1,
-  role: "QA Lead",
-  company: "Fcode Labs",
-  duration: "Jan 2024 - May 2025",
+export const experiences = [
+  {
+    id: 0,
+    role: "Associate QA Lead",
+    company: "Trust Payments",
+    duration: "Sep 2024 - Present",
+    description: [
+      "Improved test automation pass rate from 65% to 98% by identifying and fixing flaky tests and implementing robust error-handling mechanisms.",
+      "Enhanced and maintained the automated test framework built on BDD using Tech-stack such as Python, Selenium, Behave and Browserstack etc improving reliability and efficiency of test execution.",
+      "Applied in-depth domain knowledge of digital payments (Apple Pay, Google Pay, Card Payments) and their security protocols to guide QA strategy and ensure platform compliance with PCI-DSS and PSD2.",
+      "Monitored daily CI/CD test pipeline execution in DataDog, analysed failure trends, and created Jira tickets for resolution.",
+      "Performed manual and exploratory testing for new features, ensuring high-quality releases in an Agile environment.",
+      "Collaborated closely with developers, product owners, and stakeholders to sign off on release quality before deployment to production.",
+      "Defined and expanded test cases across multiple automated test suites, documenting results and tracking defects.",
+      "Provided accurate test estimations and testing strategies to support sprint planning and project timelines.",
+      "Participated in retrospectives and workshops, driving process improvements and best practices in QA.",
+    ],
+  },
+  {
+    id: 1,
+    role: "QA Lead",
+    company: "Fcode Labs",
+    duration: "Jan 2024 - May 2025",
     description: [
       "Managed and trained more than 10 Junior QA Engineers, ensuring their professional growth and enhancing team productivity.",
       "Implemented the Shift Left Testing approach by collaborating with developers and product owners early in the lifecycle to identify potential defects in design and requirements.",
@@ -29,8 +31,8 @@ export const experiences = [{
       "Executed test plans and provided detailed execution reports after every test cycle using QMetry.",
       "Performed backend testing on the database using SQL to validate the accuracy, and successful migration of data.",
       "Conducted API testing using Postman and Swagger documentation to validate endpoints, request-response structure across systems.",
-      "Performed rigorous testing on massive datasets collected via mobile and stored in AWS S3 buckets, ensuring data integrity, accuracy, and proper storage functionality."
-    ]
+      "Performed rigorous testing on massive datasets collected via mobile and stored in AWS S3 buckets, ensuring data integrity, accuracy, and proper storage functionality.",
+    ],
   },
   {
     id: 2,
@@ -52,8 +54,8 @@ export const experiences = [{
       "Managing Bitrise workflow/pipeline to upload the iOS or Android executable files to Testproject.",
       "Implemented Automated Continues Testing on every build release using Bitrise and Testproject.",
       "Used Firebase to test the user authentication and remote configuration.",
-      "Used GraphQL to verify the data is added/edited/deleted in the backend."
-    ]
+      "Used GraphQL to verify the data is added/edited/deleted in the backend.",
+    ],
   },
   {
     id: 3,
@@ -77,8 +79,8 @@ export const experiences = [{
       "Collaborating with multiple teams to conduct Integration Testing.",
       "Carried out Exploratory Testing on the edge cases.",
       "Identifying the defects in functionality/user interface and producing concise defect reports.",
-      "Reviewing the automation script developed by engineers for standards and coverage."
-    ]
+      "Reviewing the automation script developed by engineers for standards and coverage.",
+    ],
   },
   {
     id: 4,
@@ -92,8 +94,8 @@ export const experiences = [{
       "A tool comparison study on Microsoft Coded UI test automation tool.",
       "Hands-on experience in Mobile automation using Appium Server and Desktop.",
       "Review and accept the Merge Request on Git Lab by the platform users.",
-      "Hands-on experience in Amazon Web services."
-    ]
+      "Hands-on experience in Amazon Web services.",
+    ],
   },
   {
     id: 5,
@@ -116,25 +118,25 @@ export const experiences = [{
       "Upgrading the test automation framework library.",
       "Performed POC on introducing automation from the scratch to Singapore Stock Exchange Front End Automation Framework.",
       "Creating scripts to automate the front end of the application.",
-      "Demonstrating the automated Scenarios to the clients."
-    ]
+      "Demonstrating the automated Scenarios to the clients.",
+    ],
   },
   {
-  id: 6,
-  role: "Engineer - QA",
-  company: "Virtusa (Pvt) Ltd",
-  duration: "Jan 2017 - Aug 2017",
-  description: [
-    "Manual Testing (Functional Testing, GUI Testing, Regression Testing, Cross Browser Testing).",
-    "Test Management, Test Case creation, Defect Reporting and Management using tools like Excel, TFS (Team Foundation Server), and MTM (Microsoft Test Manager).",
-    "Test Automation (Java, Selenium).",
-    "Achieved the Personal Excellence Program (PEP) awards in 2016."
-  ],
-  previousRole: {
-    id: 7,
-    role: "Associate Engineer - QA",
-    duration: "March 2016 - Dec 2016",
-    description: []
-  }
-}
+    id: 6,
+    role: "Engineer - QA",
+    company: "Virtusa (Pvt) Ltd",
+    duration: "Jan 2017 - Aug 2017",
+    description: [
+      "Manual Testing (Functional Testing, GUI Testing, Regression Testing, Cross Browser Testing).",
+      "Test Management, Test Case creation, Defect Reporting and Management using tools like Excel, TFS (Team Foundation Server), and MTM (Microsoft Test Manager).",
+      "Test Automation (Java, Selenium).",
+      "Achieved the Personal Excellence Program (PEP) awards in 2016.",
+    ],
+    previousRole: {
+      id: 7,
+      role: "Associate Engineer - QA",
+      duration: "March 2016 - Dec 2016",
+      description: [],
+    },
+  },
 ];
