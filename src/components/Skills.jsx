@@ -1,77 +1,178 @@
-import { motion } from 'framer-motion';
-import { softSkills } from '../assets/data/skills';
-import { 
-  FaRobot, 
-  FaLaptopCode, 
-  FaSyncAlt, 
+import { motion } from "framer-motion";
+import { softSkills } from "../assets/data/skills";
+import {
+  FaRobot,
+  FaLaptopCode,
+  FaSyncAlt,
   FaSearch,
-  FaCheck, 
+  FaCheck,
   FaBrain,
-  
-} from 'react-icons/fa';
+} from "react-icons/fa";
 
-import appium from '../assets/images/appium2.png';
-import aws from '../assets/images/aws.png';
-import cypress from '../assets/images/cypress.jpg';
-import github from '../assets/images/github.jpg';
-import githubActions from '../assets/images/ga.png';
-import jenkins from '../assets/images/Jenkins2.png';
-import java from '../assets/images/java.png'
-import postman from '../assets/images/postman.png';
-import javascript from '../assets/images/javascript.png';
-import python from '../assets/images/python.jpg';
-import selenium from '../assets/images/selenium-2.webp';
-import playwright from '../assets/images/playwright.png';
-import jira from '../assets/images/jira.jpg';
-import monday from '../assets/images/monday.svg';
-import azureDevOps from '../assets/images/azureDevOps.png';
-import qmetry from '../assets/images/qmetry.png';
-import gitlab from '../assets/images/gitlab.png';
+import appium from "../assets/images/appium2.png";
+import aws from "../assets/images/aws.png";
+import cypress from "../assets/images/cypress.jpg";
+import github from "../assets/images/github.jpg";
+import githubActions from "../assets/images/ga.png";
+import jenkins from "../assets/images/Jenkins2.png";
+import java from "../assets/images/java.png";
+import postman from "../assets/images/postman.png";
+import javascript from "../assets/images/javascript.png";
+import python from "../assets/images/python.jpg";
+import selenium from "../assets/images/selenium-2.webp";
+import playwright from "../assets/images/playwright.png";
+import jira from "../assets/images/jira.jpg";
+import monday from "../assets/images/monday.svg";
+import azureDevOps from "../assets/images/azureDevOps.png";
+import qmetry from "../assets/images/qmetry.png";
+import gitlab from "../assets/images/gitlab.png";
 const Skills = () => {
   // Categorize skills with icon components
   const skillCategories = [
     {
       title: "Test Automation",
       icon: <FaRobot className="text-blue-900 text-3xl" />,
-      skills: ['Appium', 'Selenium', 'Playwright', 'Postman']
+      skills: ["Appium", "Selenium", "Playwright", "Postman"],
     },
     {
       title: "Development",
       icon: <FaLaptopCode className="text-blue-900 text-3xl" />,
-      skills: ['Java', 'JavaScript','Python']
+      skills: ["Java", "JavaScript", "Python"],
     },
     {
       title: "DevOps",
       icon: <FaSyncAlt className="text-blue-900 text-3xl" />,
-      skills: ['Git Lab CI/CD', 'GitHub Actions', 'Jenkins', 'AWS']
+      skills: ["Git Lab CI/CD", "GitHub Actions", "Jenkins", "AWS"],
     },
     {
       title: "Test Management",
       icon: <FaSearch className="text-blue-900 text-3xl" />,
-      skills: ['Jira', 'Monday.com', 'Azure DevOps', 'QMetry']
-    }
+      skills: ["Jira", "Monday.com", "Azure DevOps", "QMetry"],
+    },
   ];
 
   // Map skill names to their icons with consistent sizing
- const skillIcons = {
-  'Appium': <img src={appium} alt="Appium" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Selenium': <img src={selenium} alt="Selenium" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Cypress': <img src={cypress} alt="Cypress" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'GitHub': <img src={github} alt="GitHub" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'GitHub Actions': <img src={githubActions} alt="GitHub Actions" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Jenkins': <img src={jenkins} alt="Jenkins" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'AWS': <img src={aws} alt="AWS" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Postman': <img src={postman} alt="Postman" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Playwright': <img src={playwright} alt="Playwright" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Java': <img src={java} alt="Java" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'JavaScript': <img src={javascript} alt="JavaScript" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Python': <img src={python} alt="Python" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Jira': <img src={jira} alt="Jira" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Monday.com': <img src={monday} alt="Monday.com" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Azure DevOps': <img src={azureDevOps} alt="Azure DevOps" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'QMetry': <img src={qmetry} alt="QMetry" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-  'Git Lab CI/CD': <img src={gitlab} alt="Git Lab CI/CD" className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200" />,
-};
+  const skillIcons = {
+    Appium: (
+      <img
+        src={appium}
+        alt="Appium"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    Selenium: (
+      <img
+        src={selenium}
+        alt="Selenium"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    Cypress: (
+      <img
+        src={cypress}
+        alt="Cypress"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    GitHub: (
+      <img
+        src={github}
+        alt="GitHub"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    "GitHub Actions": (
+      <img
+        src={githubActions}
+        alt="GitHub Actions"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    Jenkins: (
+      <img
+        src={jenkins}
+        alt="Jenkins"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    AWS: (
+      <img
+        src={aws}
+        alt="AWS"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    Postman: (
+      <img
+        src={postman}
+        alt="Postman"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    Playwright: (
+      <img
+        src={playwright}
+        alt="Playwright"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    Java: (
+      <img
+        src={java}
+        alt="Java"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    JavaScript: (
+      <img
+        src={javascript}
+        alt="JavaScript"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    Python: (
+      <img
+        src={python}
+        alt="Python"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    Jira: (
+      <img
+        src={jira}
+        alt="Jira"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    "Monday.com": (
+      <img
+        src={monday}
+        alt="Monday.com"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    "Azure DevOps": (
+      <img
+        src={azureDevOps}
+        alt="Azure DevOps"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    QMetry: (
+      <img
+        src={qmetry}
+        alt="QMetry"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+    "Git Lab CI/CD": (
+      <img
+        src={gitlab}
+        alt="Git Lab CI/CD"
+        className="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded-full opacity-90 hover:opacity-100 transition-all duration-300 shadow-md hover:shadow-blue-200"
+      />
+    ),
+  };
 
   // Animation variants
   const container = {
@@ -79,54 +180,52 @@ const Skills = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const cardItem = {
     hidden: { opacity: 0, y: 30 },
-    show: { 
-      opacity: 1, 
+    show: {
+      opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 300 }
-    }
+      transition: { type: "spring", stiffness: 300 },
+    },
   };
 
   const skillItem = {
     hidden: { opacity: 0, scale: 0.8 },
-    show: { 
-      opacity: 1, 
+    show: {
+      opacity: 1,
       scale: 1,
-      transition: { type: "spring", bounce: 0.4 }
-    }
+      transition: { type: "spring", bounce: 0.4 },
+    },
   };
 
   return (
     <section id="skills" className="py-4">
       <div className="container mx-auto px-4">
         {/* Animated Header */}
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ 
+          transition={{
             type: "spring",
             stiffness: 100,
-            damping: 15
+            damping: 15,
           }}
           viewport={{ once: true, margin: "-50px" }}
           className="text-3xl font-bold mb-12 text-center"
         >
-          <motion.span 
+          <motion.span
             className="relative inline-block pb-2"
             whileHover={{ scale: 1.05 }}
           >
-           
-               <span className="relative inline-block pb-2">
-            <span className="relative z-10">Skills and Expertise</span>
-
+            <span className="relative inline-block pb-2">
+              <span className="relative z-10">Skills and Expertise</span>
             </span>
-            <motion.span 
+            <motion.span
               className="absolute bottom-0 left-0 w-full h-2 bg-primary/30 -z-0"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
@@ -137,7 +236,7 @@ const Skills = () => {
         </motion.h2>
 
         {/* Skills Grid */}
-        <motion.div 
+        <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -148,25 +247,23 @@ const Skills = () => {
             <motion.div
               key={index}
               variants={cardItem}
-              whileHover={{ 
+              whileHover={{
                 y: -5,
-                boxShadow: "0 15px 30px -10px rgba(59, 130, 246, 0.2)"
+                boxShadow: "0 15px 30px -10px rgba(59, 130, 246, 0.2)",
               }}
               className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <motion.div 
+              <motion.div
                 className="bg-gradient-to-br from-blue-50 to-blue-100 p-5 border-b border-gray-100"
                 whileHover={{ scale: 1.02 }}
               >
-                <div className="mb-2 flex items-center">
-                  {category.icon}
-                </div>
+                <div className="mb-2 flex items-center">{category.icon}</div>
                 <h3 className="text-xl font-semibold text-blue-900">
                   {category.title}
                 </h3>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 className="p-5 grid grid-cols-2 gap-4"
                 variants={container}
               >
@@ -174,20 +271,20 @@ const Skills = () => {
                   <motion.div
                     key={skillIndex}
                     variants={skillItem}
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.1,
                       rotate: [0, -2, 0, 2, 0],
-                      transition: { duration: 0.5 }
+                      transition: { duration: 0.5 },
                     }}
                     className="flex flex-col items-center p-3 hover:bg-blue-50 rounded-xl transition-colors"
                   >
-                    <motion.div 
+                    <motion.div
                       className="w-12 h-12 mb-3 flex items-center justify-center"
                       whileHover={{ rotate: 10 }}
                     >
                       {skillIcons[skillName] || (
                         <div className="w-full h-full rounded-full bg-blue-200 border-2 border-s-blue-900 flex items-center justify-center text-blue-600 font-bold">
-                          {skillName.substring(0,1)}
+                          {skillName.substring(0, 1)}
                         </div>
                       )}
                     </motion.div>
@@ -211,15 +308,15 @@ const Skills = () => {
         >
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-5 border-b border-gray-100">
             <h3 className="text-xl font-semibold text-blue-900 flex items-center">
-              <motion.span 
+              <motion.span
                 className="mr-3"
-                animate={{ 
+                animate={{
                   rotate: [0, 10, -10, 0],
-                  transition: { 
-                    repeat: Infinity, 
+                  transition: {
+                    repeat: Infinity,
                     repeatType: "reverse",
-                    duration: 2 
-                  }
+                    duration: 2,
+                  },
                 }}
               >
                 <FaBrain className="text-blue-900 text-2xl" />
@@ -227,8 +324,8 @@ const Skills = () => {
               QA Mindset & Soft Skills
             </h3>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             className="p-6"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -241,15 +338,15 @@ const Skills = () => {
                   key={index}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ 
+                  transition={{
                     type: "spring",
                     stiffness: 200,
                     damping: 15,
-                    delay: index * 0.1
+                    delay: index * 0.1,
                   }}
-                  whileHover={{ 
+                  whileHover={{
                     x: 5,
-                    backgroundColor: "rgba(59, 130, 246, 0.05)"
+                    backgroundColor: "rgba(59, 130, 246, 0.05)",
                   }}
                   className="flex items-start p-3 rounded-lg border border-gray-100 bg-white hover:bg-blue-50 transition-colors"
                 >

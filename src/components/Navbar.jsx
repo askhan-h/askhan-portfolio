@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ const Navbar = () => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
   };
@@ -28,10 +28,9 @@ const Navbar = () => {
       setLastScrollY(currentY);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-
 
   return (
     <motion.nav
@@ -43,19 +42,23 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-3 sm:py-4">
         <div className="flex justify-between items-center">
           {/* Logo/Name */}
-          <p className="text-xl sm:text-2xl font-bold text-primary">Askhan Hassan</p>
+          <p className="text-xl sm:text-2xl font-bold text-primary">
+            Askhan Hassan
+          </p>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex space-x-6">
-            {['about', 'experience', 'skills', 'services', 'contact'].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className="hover:text-primary transition-colors font-semibold"
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
-            ))}
+            {["about", "experience", "skills", "services", "contact"].map(
+              (section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className="hover:text-primary transition-colors font-semibold"
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              ),
+            )}
           </div>
 
           {/* Mobile menu toggle */}
@@ -69,17 +72,19 @@ const Navbar = () => {
         </div>
 
         {/* Mobile navigation */}
-        <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} pb-4`}>
+        <div className={`md:hidden ${isOpen ? "block" : "hidden"} pb-4`}>
           <div className="flex flex-col space-y-3 mt-3">
-            {['about', 'experience', 'skills', 'services', 'contact'].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className="hover:text-primary transition-colors font-semibold text-left"
-              >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </button>
-            ))}
+            {["about", "experience", "skills", "services", "contact"].map(
+              (section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className="hover:text-primary transition-colors font-semibold text-left"
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              ),
+            )}
           </div>
         </div>
       </div>

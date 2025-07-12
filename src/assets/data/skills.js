@@ -19,10 +19,19 @@ export const softSkills = [
   "Communication",
   "Shift Left Testing",
   "Attention to Details",
-  "Time Management"
+  "Time Management",
 ];
 
 export const tools = [
-  "Appium", "Selenium", "Playwright", "Java", "JavaScript", 
-  "Git", "GitHub Actions", "Jenkins", "AWS", "Jira", "Postman"
+  "Appium",
+  "Selenium",
+  "Playwright",
+  "Java",
+  "JavaScript",
+  "Git",
+  "GitHub Actions",
+  "Jenkins",
+  "AWS",
+  "Jira",
+  "Postman",
 ];

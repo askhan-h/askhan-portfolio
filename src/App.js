@@ -1,19 +1,19 @@
-import { BrowserRouter as Router } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Services from './components/Services';
-import ContactForm from './components/ContactForm';
-import ScrollToTopButton from './components/ScrollToTopButton';
+import { BrowserRouter as Router } from "react-router-dom";
+import { motion } from "framer-motion";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Skills from "./components/Skills";
+import Services from "./components/Services";
+import ContactForm from "./components/ContactForm";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white text-gray-800 overflow-x-hidden">
-       <Navbar />
+        <Navbar />
 
         <main className="w-full max-w-7xl mx-auto pt-24">
           {/* Hero Section */}

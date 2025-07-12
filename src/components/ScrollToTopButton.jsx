@@ -1,12 +1,12 @@
-import { useEffect, useState } from 'react';
-import { FaArrowUp } from 'react-icons/fa';
+import { useEffect, useState } from "react";
+import { FaArrowUp } from "react-icons/fa";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      const hero = document.getElementById('hero');
+      const hero = document.getElementById("hero");
       const heroBottom = hero?.getBoundingClientRect().bottom || 0;
 
       if (heroBottom < 0) {
@@ -16,12 +16,12 @@ const ScrollToTopButton = () => {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
