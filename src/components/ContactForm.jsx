@@ -15,7 +15,7 @@ const ContactForm = () => {
   const whatsappNumber = "+94717612345";
   const whatsappMessage = "Hello! I would like to inquire about";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-  const emailAddress = "askhan.hassan@gmail.com";
+  const emailAddress = "contact@askhanhassan.com";
   const emailSubject = "Contact Inquiry";
   const emailBody = "Hello! I would like to inquire about";
   const emailUrl = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;

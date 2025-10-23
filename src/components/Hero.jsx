@@ -24,7 +24,7 @@ const Hero = () => {
   const handleEmailClick = (e) => {
     e.preventDefault();
 
-    const email = "askhan.hassan@gmail.com";
+    const email = "contact@askhanhassan.com";
     const subject = "Let's Connect";
     const body =
       "Hello Askhan,\n\nI came across your profile and wanted to get in touch about...";
@@ -162,7 +162,7 @@ const Hero = () => {
               {/* Email */}
               <div className="relative group">
                 <a
-                  href="mailto:askhan.hassan@gmail.com"
+                  href="mailto:contact@askhanhassan.com"
                   onClick={handleEmailClick}
                   className="group"
                   aria-label="Email Askhan Hassan"
