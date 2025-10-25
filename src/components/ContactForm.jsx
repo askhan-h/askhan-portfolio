@@ -12,7 +12,7 @@ const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   // Contact information
-  const whatsappNumber = "+94717612345";
+  const whatsappNumber = "+61437209452";
   const whatsappMessage = "Hello! I would like to inquire about";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   const emailAddress = "contact@askhanhassan.com";
