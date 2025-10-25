@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaFileDownload } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
 import profile from "../assets/images/profile.jpg";
-import cvPdf from "../assets/docs/Askhan_Hassan_CV.pdf";
+import cvPdf from "../assets/docs/Resume_QAEL_AskhanHassan.pdf";
 
 const Hero = () => {
   const handleDownloadCV = () => {
     const link = document.createElement("a");
     link.href = cvPdf;
-    link.download = "Askhan_Hassan_CV.pdf";
+    link.download = "Resume_QAEL_AskhanHassan.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
